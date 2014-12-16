@@ -14,6 +14,7 @@
   width:1000px;
   margin-left:auto;
   margin-right:auto;
+  height:auto;
 }
 /*topBar*/
 .topBar{
@@ -43,40 +44,114 @@
 .logoBar{
   height:85px;
   background-color: #023c65;
+  border-bottom: 2px solid #FFF;
 }
 .logoBar > .comWidth> .logo{
   padding-left: 41px;
   padding-top: 13px;
 }
-.header >.logoBar > .comWidth > .search_box{
+ .search_box{
   width:430px;
+  padding-top: 23px;
+  padding-left: 185px;
 }
-.header > .logoBar > .comWidth > .search_text{
+.search_text{
   width:360px;
-  height:35px;
+  height:25px;
+  line-height: 35px;
 }
-button{
-  width:70px;
-  height:35px;
-  font-size: 14px;
+.search_btn{
   background-color: #FF8C00;
 }
+.shopCart{
+  width:100px;
+  height:35px;
+  background-color: #FF8C00;
+}
+.shopText{
+  color:#FFF;
+  height:100%;
+  text-align: center;
+  margin-top: 5px;
+}
 
-
-
-
-
-
-
-
-
-
-
+/*nav*/
+.navBox{
+  height:35px;
+  background-color:#023c65;
+  color:#FFF;
+}
+.shopClass{
+  width:190px;
+  position:relative;
+}
+.shopClass h3{
+  text-align:center;
+  line-height:35px;
+}
+.shopClass_icon{
+  width:11px;
+  height:7px;
+  overflow:hidden;
+  background-position:0 -39px;
+  display:inline-block;
+  margin-left:11px;
+}
+.nav{
+  line-height:35px;
+}
+.nav li{
+  float:left;
+  transition: background-color 0.3s linear 0.3s;
+}
+.nav li:hover{
+  background-color: #3487F2;
+}
+.nav a{
+  height:35px;
+  display:inline-block;
+  padding:0 35px;
+  color:#FFF;
+}
+.shopClass_show{
+  background-color:#023c65;
+  position:absolute;
+  left:0;
+  top:35px;
+  width:100%;
+  padding-bottom:1px;
+}
+.shopClass_item{
+  padding:13px 10px;
+  border-bottom:#3487F2 solid 1px;
+  border-top:#5AA1FE solid 1px;
+  line-height:16px;
+}
+.shopClass_item dt{
+  height:21px;
+  line-height:1;
+  overflow:hidden;
+}
+.shopClass_item a{
+  color:#FFF;
+}
+.shopClass_item a:hover{
+  text-decoration:underline;
+}
+.shopClass_item .aLink{
+  width:48px;
+  height:20px;
+  display:inline-block;
+  text-align:center;
+  line-height:20px;
+  text-decoration:none;}
 
 footer{
   text-align: center;
   display: block;
-  padding-top: 30px;
+  padding-top: 300px;
+  position:absolute;
+  margin:0 auto;
 }
 
 header{
@@ -171,4 +246,5 @@ section > .product_list > .item > .item_img > a{
 section > .results{
   padding-top: 80px;
   text-align: center;
+  margin:0 auto;
 }
