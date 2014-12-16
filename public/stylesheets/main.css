@@ -1,0 +1,174 @@
+/**{
+  margin:0;
+  paddin:0;
+  font-size: 18px;
+
+}*/
+*{
+  font-family: "Segeo UI";
+}
+.fl{float:left;}
+.fr{float:right;}
+
+.comWidth{
+  width:1000px;
+  margin-left:auto;
+  margin-right:auto;
+}
+/*topBar*/
+.topBar{
+  height:31px;
+  background-color:#F7F7F7;
+  line-height:31px;
+}
+.topBar > .comWidth> .leftArea> a:hover{
+  color:red;
+}
+.topBar > .comWidth > .rightArea > a:hover{
+  color:red;
+}
+.collection{
+  background: url(../images/icon/collection.jpg) left center no-repeat;
+  padding-left: 19px;
+  font-weight: bold;
+}
+.leftArea{
+  float:left;
+}
+.rightArea{
+  float:right;
+}
+
+/*logo*/
+.logoBar{
+  height:85px;
+  background-color: #023c65;
+}
+.logoBar > .comWidth> .logo{
+  padding-left: 41px;
+  padding-top: 13px;
+}
+.header >.logoBar > .comWidth > .search_box{
+  width:430px;
+}
+.header > .logoBar > .comWidth > .search_text{
+  width:360px;
+  height:35px;
+}
+button{
+  width:70px;
+  height:35px;
+  font-size: 14px;
+  background-color: #FF8C00;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+footer{
+  text-align: center;
+  display: block;
+  padding-top: 30px;
+}
+
+header{
+  text-align: center;
+  display:flex;
+  border-bottom: 3px solid orange;
+  height:50px;
+}
+nav{
+  display: block;
+  position:relative;
+  margin:0 auto;
+}
+.ul{
+  list-style: none;
+}
+.ul > li{
+  margin-top: 19px;
+  float:left;
+}
+.ul > li > a{
+  text-decoration: none;
+  height:30px;
+  line-height:30px;
+  width:140px;
+  background-color: rgba(88, 45, 255, 0.46);
+  border-bottom: 1px solid lightgray;
+  display:block;
+  text-align: center;
+  transition: all 0.1s ease 0.1s;
+}
+.ul > li > a:hover{
+  background-color: #f60;
+  color: rgba(116, 202, 226, 0.77);
+  height:40px;
+  margin-top:-10px;
+  line-height: 40px;
+}
+section{
+  display: block;
+  width:100%;
+
+}
+section > #search-block{
+  width:100%;
+  background-color: #1D7AD9;
+}
+
+section > #search-block > #logo{
+  overflow: hidden;
+  width:auto;
+  height:auto;
+}
+section > #search-block > .search{
+  padding-top: 10px;
+  width:500px;
+  margin: 0 auto;
+  background-color: #1D7AD9;
+  padding-left:150px;
+  height:100px;
+}
+section > #search-block>.search > #query{
+  width:300px;
+}
+section > #search-block>.search > #button{
+  width: 80px;
+}
+section > .product_list{
+  display:block;
+  position:relative;
+  margin: 0 auto;
+  width:100%;
+  padding-top: 20px;
+  height:auto;
+}
+section > .product_list > .item{
+  display: inline-block;
+  width:40%;
+  height:auto;
+  text-align: center;
+  padding-left: 50px;
+  padding-top: 20px;
+
+}
+section > .product_list > .item > .item_img{
+  width:100%;
+  height: auto;
+}
+section > .product_list > .item > .item_img > a{
+  width:auto;
+}
+section > .results{
+  padding-top: 80px;
+  text-align: center;
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>EComm</title>
+  <link rel="stylesheet" href="stylesheets/main.css" type="text/css"/>
+  <link rel="stylesheet" href="stylesheets/default.css" type="text/css"/>
+  <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
+  <script>
+    // making an ajax call to the backend, searching for the data
+
+    $(function () {
+      console.log('test');
+      $('#query').change(function (){
+        console.log(this.value);
+
+        $.get('/books/' + this.value.toLowerCase(), function (data) {
+          console.log(data);
+          //$('div.results')
+          $('<img>').attr('src',data.books.url).appendTo('div.results');
+          $('<a></a>').attr('href','https://www.google.com/#q='+data.books.name).html(data.books.name + ': ' + data.books.genre_s).appendTo('div.results');
+
+          /*if (data.length) {
+            for (var i = 0, len = data[i].length; i < len; i++) {
+              //console.log(JSON.stringify(data[i].name));
+              var getdata = JSON.stringify(data[i].id);
+              console.log(JSON.stringify(data));
+              console.log(JSON.parse(getdata));
+              $('#result').attr('href', 'www.google.com').html(data.books.id).appendTo(document.body);
+            }
+          }*/
+        });
+      });
+    });
+
+  </script>
+  <style>
+
+  </style>
+</head>
+<body>
+<div class="headerBar">
+  <div class="topBar">
+    <div class="comWidth">
+      <div class="leftArea">
+        <a href="#" class="collection">bookmark</a>
+      </div>
+      <div class="rightArea">
+        Welcome!<a href="#">Login</a>
+        <a href="#">Register</a>
+      </div>
+    </div>
+  </div>
+  <div class="logoBar">
+    <div class="comWidth">
+      <div class="logo fl">
+        <a href="#"><img src="/images/bestbuy_log.jpg" alt="BestBuy"/></a>
+      </div>
+      <div class="search_box fl">
+        <input type="text" class="search_text"/>
+        <input type="button" value="Search" class="search_btn"/>
+      </div>
+      <div class="shopCart fr">
+        <span class="shopText">Cart</span>
+        <span class="shopNum">0</span>
+      </div>
+    </div>
+  </div>
+  <div class="navBox">
+    <div class="comWidth">
+      <div class="shopClass">
+        <h3>All Products</h3>
+      </div>
+      <ul class="nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">New</a></li>
+        <li><a href="#">GiftCard</a></li>
+        <li><a href="#">Coupon</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<header>
+  <nav>
+    <ul class="ul">
+      <li><a href="">Home</a></li>
+      <li><a href="">New Product</a></li>
+      <li><a href="">Gift Card</a></li>
+      <li><a href="">Help</a></li>
+      <li><a href="">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+  <div id="search-block">
+    <div id="logo"><img src="best-buy-logo.gif" alt=""/></div>
+  <div class="search">
+    <input type="text" id="query" placeholder="search for items"/>
+    <input type="button" value="search" id="button"/>
+  </div>
+    </div>
+
+
+  <div class="results"></div>
+
+  <div class="product_list">
+    <div class="item">
+      <div class="item_img">
+      <a href=""><img src="images/thief.jpg" alt=""/></a>
+      </div>
+      <a href="/views/book_thief.html"><p>The Lightning Thief</p></a>
+      <p>price:12.5</p>
+    </div>
+    <div class="item">
+      <div class="item_img">
+        <a href=""><img src="/images/sophies-world.jpg" alt=""/></a>
+      </div>
+      <a href=""><p>Sophie's World : The Greek Philosophers</p></a>
+      <p>price:3.07</p>
+    </div>
+    <div class="item">
+      <div class="item_img">
+        <a href=""><img src="images/monsters.gif" alt=""/></a>
+      </div>
+      <a href=""><p>The Sea of Monsters</p></a>
+      <p>price:6.49</p>
+    </div>
+
+    <div class="item">
+      <div class="item_img">
+        <a href=""><img src="images/des_big.jpg" alt=""/></a>
+      </div>
+      <a href=""><p>Lucene in Action, Second Edition</p></a>
+      <p>price:30.5</p>
+    </div>
+
+  </div>
+</section>
+<footer>
+  &copy; &lt;Rice&gt; 2014
+</footer>
+</body>
+</html>
