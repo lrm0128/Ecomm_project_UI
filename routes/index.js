@@ -30,11 +30,12 @@ router.get('/books/:name', function(req, res) {
 
 
 
-var review = [];
+var reviews = [];
 
-router.post('/contacts/reviews', function (req, res) {
-  review.push(req.body);
-  res.body=review;
+router.post('/books/reviews', function (req, res) {
+
+  reviews.push(req.body);
+  res.body=reviews;
   res.status(201).json(res.body);
 });
 

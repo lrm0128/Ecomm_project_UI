@@ -4,8 +4,22 @@
   font-size: 18px;
 
 }*/
+body{
+  font-size:14px;
+}
+img{
+  border:none;
+}
+li{
+  list-style:none;
+}
+a{
+  text-decoration:none;
+  color:#656565;
+}
 *{
   font-family: "Segeo UI";
+  margin:0;padding:0;
 }
 .fl{float:left;}
 .fr{float:right;}
@@ -84,10 +98,23 @@
 .shopClass{
   width:190px;
   position:relative;
+  display: block;
+}
+.shopClass:hover > .shopClass_show{
+  background-color:#023c65;
+  position:absolute;
+  left:0;
+  top:35px;
+  width:100%;
+  padding-bottom:1px;
+  display:block;
 }
 .shopClass h3{
   text-align:center;
   line-height:35px;
+}
+.shopClass h3 a{
+  color:#FFF;
 }
 .shopClass_icon{
   width:11px;
@@ -114,13 +141,9 @@
   color:#FFF;
 }
 .shopClass_show{
-  background-color:#023c65;
-  position:absolute;
-  left:0;
-  top:35px;
-  width:100%;
-  padding-bottom:1px;
+  display:none;
 }
+
 .shopClass_item{
   padding:13px 10px;
   border-bottom:#3487F2 solid 1px;
@@ -149,9 +172,9 @@
 footer{
   text-align: center;
   display: block;
-  padding-top: 300px;
   position:absolute;
-  margin:0 auto;
+  width:100%;
+  padding-top:50px;
 }
 
 header{
@@ -245,6 +268,46 @@ section > .product_list > .item > .item_img > a{
 }
 section > .results{
   padding-top: 80px;
-  text-align: center;
+  display: block;
   margin:0 auto;
+  padding-bottom: 300px;
+}
+section > .results > img{
+
+  display: block;
+  margin: 0 auto;
+}
+section > .results > a{
+  padding-bottom: 10px;
+  display: block;
+  text-align: center;
+}
+section > .results > a:hover{
+  color:red;
+  text-decoration-line: underline;
+}
+
+section >  .review {
+  display:none;
+  margin:0 auto;
+  width:50%;
+  padding-bottom: 50px;
+  padding-top:50px;
+}
+section > .review > #email{
+  margin:0 auto;
+  padding:0;
+}
+section > .review > #reviews{
+  margin:0 auto;
+  padding:0;
+}
+section > .review > #submit{
+  float:right;
+}
+section > .review > #review_list > div{
+  width:100%;
+  display: block;
+  margin:0 auto;
+  padding-top:10px;
 }

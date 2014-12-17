@@ -4,35 +4,47 @@
   <meta charset="UTF-8">
   <title>EComm</title>
   <link rel="stylesheet" href="stylesheets/main.css" type="text/css"/>
-  <link rel="stylesheet" href="stylesheets/default.css" type="text/css"/>
   <script type="text/javascript" src="/bower_components/jquery/dist/jquery.js"></script>
   <script>
-    // making an ajax call to the backend, searching for the data
 
     $(function () {
       console.log('test');
-      $('.search_text').change(function (){
+      var reviewText = $([]);
+      $('.search_text').change(function () {
         console.log(this.value);
-
+        $('.review').css('display','block');
         $.get('/books/' + this.value.toLowerCase(), function (data) {
           console.log(data);
-          //$('div.results')
-          $('<img>').attr('src',data.books.url).appendTo('.results');
-          $('<a></a>').attr('href','https://www.google.com/#q='+data.books.name).html(data.books.name + ': ' + data.books.genre_s).appendTo('.results');
+          $('.results').html('');
+          $('<a></a>').attr('href', 'https://www.google.com/#q=' + data.books.name).html(data.books.name + ': ' + data.books.genre_s).appendTo('.results');
+          $('<img>').attr('src', data.books.url).appendTo('.results');
+        });
+      });
+      $('#query').click(function () {
+        console.log(this.value);
+        $('.review').css('display','block');
+        $.get('/books/' + this.value.toLowerCase(), function (data) {
+          $('.results').html('');
+          $('<a></a>').attr('href', 'https://www.google.com/#q=' + data.books.name).html(data.books.name + ': ' + data.books.genre_s).appendTo('.results');
+          $('<img>').attr('src', data.books.url).appendTo('.results');
 
-          /*if (data.length) {
-            for (var i = 0, len = data[i].length; i < len; i++) {
-              //console.log(JSON.stringify(data[i].name));
-              var getdata = JSON.stringify(data[i].id);
-              console.log(JSON.stringify(data));
-              console.log(JSON.parse(getdata));
-              $('#result').attr('href', 'www.google.com').html(data.books.id).appendTo(document.body);
-            }
-          }*/
+        });
+      });
+      $('#submit').click(function(){
+        var email = $('#email').val();
+        var review_text = $('#reviews').val();
+        var reviewjson = {email:email,review:review_text};
+        $('#review_list').html('');
+        $.post('/books/reviews',reviewjson,function(data){
+          reviewText = data;
+          for( var i = 0 ; i < reviewText.length ; i++){
+            $('#review_list').prepend("<div>Email:"+ reviewText[i].email + "</div><div>Review:"+reviewText[i].review+"</div>");
+          }
+          $('#email').val('');
+          $('#reviews').val('');
         });
       });
     });
-
   </script>
   <style>
 
@@ -66,7 +78,7 @@
   <div class="navBox">
     <div class="comWidth clearfix">
       <div class="shopClass fl">
-        <h3>All Products</h3>
+        <h3><a href="">All Products</a></h3>
         <div class="shopClass_show">
           <dl class="shopClass_item">
             <dt><a href="#" class="b">Appliance</a> <a href="#" class="b">Washer</a> </dt>
@@ -102,8 +114,18 @@
   </div>
 </div>
 <section>
-<div class="results"></div>
+<div class="results">
+
+</div>
+
+  <div class="review">
+    <input type="text" id="email" placeholder="Email"/>
+    <input type="text" id="reviews" placeholder="Review"/>
+    <input type="button" id="submit" value="Submit"/>
+    <div id="review_list"></div>
+  </div>
 </section>
+
 
 
 <footer>
